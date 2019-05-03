@@ -1,4 +1,4 @@
-cp _entorno__29_abr_2019_.sh MCHROOT/
+
 system_to_chroot () 
 { 
     eval "$_new";
@@ -30,7 +30,7 @@ system_to_chroot ()
     }
 }
 system_to_chroot
-[[ -d MISO/ ]] || mkdir MISO/ MSQUAS/ MCHROOT/
+[[ -d MISO/ ]] || mkdir MISO/ MSQUAS/ MCHROOT/ PAQ/
 _arch_to_chroot () 
 { 
     eval "$_new";
@@ -172,7 +172,7 @@ chroot $_dir /bin/bash /ajustes.sh
 INJECT
 }
 _arch_to_chroot
-mount -o bind /ARCHPAQ/ MCHROOT/var/cache/pacman/pkg 
+mount -o bind PAQ/ MCHROOT/var/cache/pacman/pkg 
 echo nameserver 8.8.8.8 >   MCHROOT/etc/resolv.conf
 _mk_instalar_sistema   MCHROOT/instalar.sh
 chroot  MCHROOT/ /bin/bash /instalar.sh $1
