@@ -34,7 +34,7 @@ system_to_chroot
 _arch_to_chroot () 
 { 
     eval "$_new";
-    mount archlinux-2019.03.01-x86_64.iso MISO/;
+    mount archlinux*.iso MISO/;
     mount MISO/arch/x86_64/airootfs.sfs MSQUAS/;
     mount_overlay_v1 MSQUAS/ MCHROOT/;
     chroot_mount_bind /dev/ /sys/ /proc/ MCHROOT/
